@@ -1,8 +1,8 @@
 
-import { ClientNetworkValue } from '../../src/ClientNetworkValue';
+import { ClientNetworkValue } from 'antelopejs';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:8080');
+const socket = io(window.location.origin);
 
 /*
     Below we create a new client network value. The first parameter is the initial value to set it to.

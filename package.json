@@ -1,8 +1,8 @@
 {
   "name": "antelopejs",
-  "version": "1.0.7",
+  "version": "1.0.14",
   "description": "",
-  "main": "/dist",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "mocha --watch --reporter mocha-clearscreen-reporter",
     "document": "cd src && jsdoc -r . -d ../docs && cd ..",

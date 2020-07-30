@@ -2,7 +2,7 @@ const express = require('express');
 const io = require('socket.io');
 const path = require('path');
 const app = express();
-const { ServerNetworkValue } = require('../../src/ServerNetworkValue');
+const { ServerNetworkValue } = require('antelopejs');
 
 /*
 ===================================
@@ -14,7 +14,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-const server = app.listen(8080, function() {
+const server = app.listen(process.env.PORT || 8080, function() {
     console.log('Example Server Running...');
 });
 const wss = io(server);

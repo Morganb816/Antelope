@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack -w & nodemon server/index.js"
+    "dev": "webpack -w & nodemon server/index.js",
+    "start": "node ./server/index.js"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +20,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "antelopejs": "^1.0.14",
     "express": "^4.17.1",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
