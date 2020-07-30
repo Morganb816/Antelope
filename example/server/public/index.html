@@ -10,10 +10,14 @@
 </head>
 
 <body>
-    <h1>Antelope Networking - Example</h1>
+    <div id='header-container' class='row'>
+        <h1>Antelope Networking</h1>
+        <img src="https://camo.githubusercontent.com/c7ae28523dc86b24776824ec2af644cadf27c091/68747470733a2f2f62616e6e6572322e636c65616e706e672e636f6d2f32303138303431382f7576652f6b697373706e672d612d70726f6e67686f726e2d616e74656c6f70652d612d70726f6e67686f726e2d616e74656c6f70652d64726177696e672d656c6b2d766563746f722d35616437623238363464363365342e3530343938313935313532343038353338323331372e6a7067"
+            width="100" height="100">
+    </div>
     <hr />
-    <div id='main-container'>
-        <div class='section'>
+    <div id='main-container' class='row'>
+        <div>
             <h3>About This Example:</h3>
             <p>
                 This example is used to demonstrate what Antelope Networking is designed to do
@@ -25,8 +29,8 @@
                 CONFIRMED correct value from the server.
             </p>
         </div>
-        <div id='data-container' class='section'>
-            <h4>Control client with "+" or "-" on your keyboard</h4>
+        <div id='data-container'>
+            <h4><span class='red'>Control client with "+" or "-" on your keyboard</span></h4>
             <div>
                 <div>
                     <h3>Client</h3>
@@ -38,6 +42,17 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id='description-container'>
+        <hr />
+        <h3>Code Examples</h3>
+        <p>Below are a set of GitHub Gists that are the exact code used in this example. One is the clients index.js,
+            and the other is the servers index.js</p>
+        <p>I hope my comments will help describe more of whats happening in the above example for you.</p>
+        <h3>Client: </h3>
+        <script src="https://gist.github.com/Morganb816/917ff223366e52c7ab2ddd58acfb6f93.js"></script>
+        <h3>Server: </h3>
+        <script src="https://gist.github.com/Morganb816/7a2225aa8181f08cb25f4f280a604ce4.js"></script>
     </div>
 </body>
 

@@ -8,11 +8,11 @@
 
 ## About
 ### What it is:
-Jakalope Networking is a library used to help develop JavaScript multiplayer games with a determanistic client server architecture.
-Jakalope should be considered the layer inbetween and reaching just barely into both your client and server.
+Antelope Networking is a library used to help develop JavaScript multiplayer games with a determanistic client server architecture.
+Antelope should be considered the layer inbetween and reaching just barely into both your client and server.
 
 ### What it isn't:
-Jakalope will not help with things like user input, server 
+Antelope will not help with things like user input, server 
 
 ### What it Might Be:
 In The future I plan on extracting out Socket.IO in favor of just writing our own WebSocket solution. Socket.IO is heavy and unnecesary for a solution like this but to get MVP working the decision has been made to just suck it up. In the future writing a Unity Client port would be amazing. As of now i think keeping it JS on client side is a win though because of the ability to share code between the server and client in terms of movement methods etc.

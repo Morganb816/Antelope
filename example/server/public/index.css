@@ -1,34 +1,33 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-#main-container {
-    position: relative;
-    transform: translateX(-50%);
-    left: 50%;
     max-width: 800px;
+    margin: auto;
+}
+.row {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.section {
-    width: 50%;
+.row div {
+    flex: 1;
 }
-
 #data-container {
     text-align: center;
 }
-
 #data-container div {
     display: flex;
     flex-direction: row;
 }
-
 #data-container div div {
     width: 50%;
     text-align: center;
     display: flex;
     flex-direction: column;
     background-color: #EEEEEE;
+    border: 1px solid #333333;
     margin: 10px;
+}
+.red {
+    color: red;
 }
