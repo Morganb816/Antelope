@@ -1,15 +1,30 @@
 {
-  "name": "net",
-  "version": "1.0.0",
+  "name": "antelopejs",
+  "version": "1.0.7",
   "description": "",
-  "main": "index.js",
+  "main": "/dist",
   "scripts": {
     "test": "mocha --watch --reporter mocha-clearscreen-reporter",
-    "document": "cd src && jsdoc -r . -d ../docs && cd .."
+    "document": "cd src && jsdoc -r . -d ../docs && cd ..",
+    "build": "webpack"
+  },
+  "homepage": "https://github.com/Morganb816/Antelope",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Morganb816/Antelope"
+  },
+  "bugs": {
+    "url": "https://github.com/Morganb816/Antelope/issues"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "/dist"
+  ],
+  "author": {
+    "name": "Morgan Brown",
+    "email": "Morganb816@gmail.com"
+  },
+  "license": "(MIT OR Apache-2.0)",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",

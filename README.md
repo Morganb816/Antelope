@@ -30,3 +30,4 @@ Antelope utilizes Mocha and Chai for testing. To run the tests you can `npm run 
 
 ---
 ## License
+MIT License
