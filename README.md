@@ -25,6 +25,30 @@ Antelope Networking is mostly a pet project for me to learn more about architect
 * Flexable: Antelope just track values. what you do with them is up to you.
 
 ---
+## Examples
+#### Client
+```js
+const xPosition = new ClientNetowrkValue(10, 'x-posiiton', socket);
+
+xPosition.set(5);
+
+xPosition.get();
+```
+
+#### Server
+```js
+
+function validate(newPos, input) {
+    if (movementIsPossible(oldPos, newPos, input)) {
+        return newPos;
+    } else {
+        getNewPosition(oldPos, input);
+    }
+}
+
+const xPosition = new ServerNetworkValue('x-position', validate, socket);
+```
+---
 ## Tests
 Antelope utilizes Mocha and Chai for testing. To run the tests you can `npm run test`.
 
