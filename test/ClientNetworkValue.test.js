@@ -106,4 +106,29 @@ describe(`==========================
             });
         });
     });
+
+    describe('Should have a method that takes in a callback to run whenever we get a response from the server', () => {
+        let called = 0;
+        let output = null;
+        before(function () {
+            cnv.steps = {};
+            cnv.currentID = 1;
+            function increment(value) {
+                called ++;
+                output = value;
+            }
+            cnv.subscribeToUpdates(increment);
+            fakews.callbackOn();
+        });
+        it('has a method called subscribeToUpdates', () => {
+            expect((cnv.subscribeToUpdates)).to.be.a('function');
+        });
+        it('Should store the callback in an array', () => {
+            expect((cnv.subscribers.length)).to.equal(1, 'does not equal 1');
+        })
+        it('should cause a function to run whenever the server sends a response to the client.', () => {
+            expect(called).to.equal(1, 'not updating');
+            expect(output).to.equal(10, 'not updating');
+        });
+    })
 });

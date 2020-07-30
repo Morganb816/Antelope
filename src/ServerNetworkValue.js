@@ -3,7 +3,7 @@ class ServerNetworkValue {
         this.checkUpdates = checkUpdates;
         this.ws = ws;
         this.value = value;
-        this.messageID = `value-${id}`;
+        this.messageID = `antelope-value-${id}`;
 
         ws.on(this.messageID, data => this.handleMessage(data));
     };

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/index.css" rel="stylesheet">
+    <script type="module" src="bundle.js" defer></script>
+    <title>Antelope Networking - Example</title>
+</head>
+
+<body>
+    <h1>Antelope Networking - Example</h1>
+    <hr />
+    <div id='main-container'>
+        <div class='section'>
+            <h3>About This Example:</h3>
+            <p>
+                This example is used to demonstrate what Antelope Networking is designed to do
+                and to help you use it in the best way possible.
+            </p>
+            <p>
+                To the right you see two numbers. The number on the left represents the clients
+                current idea of what the example value is. The number to the right is the last
+                CONFIRMED correct value from the server.
+            </p>
+        </div>
+        <div id='data-container' class='section'>
+            <h4>Control client with "+" or "-" on your keyboard</h4>
+            <div>
+                <div>
+                    <h3>Client</h3>
+                    <h1 id='client-display-value'>0</h1>
+                </div>
+                <div>
+                    <h3>Last Confirmed</h3>
+                    <h1 id='last-confirmed-display-value'>0</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

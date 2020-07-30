@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-container {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+.section {
+    width: 50%;
+}
+
+#data-container {
+    text-align: center;
+}
+
+#data-container div {
+    display: flex;
+    flex-direction: row;
+}
+
+#data-container div div {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE;
+    margin: 10px;
+}

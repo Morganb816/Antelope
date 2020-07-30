@@ -13,7 +13,6 @@ describe(`==========================
 
         },
         emit: function (id, {step, value, other}) {
-            console.log(id, step, value, other);
             testStep = step
             clientValue = value;
         }

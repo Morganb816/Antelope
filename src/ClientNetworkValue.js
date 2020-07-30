@@ -19,26 +19,19 @@ class ClientNetworkValue {
      * @param {number} initialValue  - initial value that should be set.
      * @param {string} id            - a unique identifier for this value (used for networking).
      * @param {any}    ws            - Socket.io client instance.
-     * @param {number} lerpTime      - amount of time to lerp back to correct value.
-     * @param {number} lerpAmount    - amount to move while lerping.
-     * @param {number} lerpAccuracy  - lower bound of threshold preventing value from lerping (Just ignores any difference smaller than this).
-     * @param {number} lerpThreshold - higher bound of threshold that will imediately set local value to remote if they become to far apart.
      */
-    constructor(initialValue, id, ws, lerpTime = 0, lerpAmount = 0, lerpAccuracy = 1, lerpThreshold = 5) {
+    constructor(initialValue, id, ws) {
         this.local = initialValue;
         this.remote = initialValue;
 
-        this.messageID = `value-${id}`;
+        this.messageID = `antelope-value-${id}`;
         this.ws = ws;
 
-        this.lerpTime = lerpTime;
-        this.lerpAmount = lerpAmount;
-        this.lerpAccuracy = lerpAccuracy;
-        this.lerpThreshold = lerpThreshold;
-        this.cancelLerp = null;
         this.steps = {};
         this.currentID = 1;
         ws.on(this.messageID, data => this.handleMessage(data));
+
+        this.subscribers = [];
     }
     /**
      * Get
@@ -92,7 +85,16 @@ class ClientNetworkValue {
                 this.reset(value);
             };
         }
+        this.subscribers.forEach(func => func(value));
     };
+
+    /**
+     * Subscribe To Updates - Used to set callbacks to run when the server updates this variable.
+     * @param {function} callback - callback that will run whenever the server updates this variable. 
+     */
+    subscribeToUpdates(callback) {
+        this.subscribers.push(callback);
+    }
 };
 
 module.exports = {
