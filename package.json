@@ -1,10 +1,10 @@
 {
   "name": "antelopejs",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "publish-package": "npm run test",
+    "publish-package": "npm run publish-test",
     "publish-test": "mocha",
     "postpublish-test": "npm run publish-build",
     "publish-build": "webpack",

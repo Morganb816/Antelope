@@ -29,6 +29,14 @@ class InterpolatedValue {
         this.changeStack = new StackRunner(async data => await this.run(data));
     };
     /**
+     * Get
+     * - Returns the current value of this variable;
+     * @returns {number} the current value of this variable.
+     */
+    get() {
+        return this.value;
+    }
+    /**
      * Set
      * - Makes a new request to pass into our stack runner.
      * @param {number} value - The value we wish to make a request for.

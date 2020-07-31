@@ -35,6 +35,15 @@ describe(`========================
     it('Should have a stack to keep track of incoming change requests', () => {
         expect(iv).to.have.property('changeStack');
     });
+    describe('Should have a method called get', () => {
+        it('has a method called get', () => {
+            expect(iv).to.have.property('get');
+            expect(iv.get).to.be.a('function');
+        });
+        it('Should return the current value of this variable', () => {
+            expect(iv.get()).to.equal(0);
+        });
+    })
     describe('Should have a method called set', () => {
         it('has a method called set', () => {
             expect(iv).to.have.property('set');
