@@ -48,7 +48,47 @@ function moveCloserTo(from, to, amount) {
     return from;
 }
 
+/**
+ * Stack Runner - Class that is used to create a stack that aslong 
+ * as it has something in it will recursivley run a callback, by
+ * shifting off its stack, until the stack is empty.
+ * @property {function} callback - The callback to run on each entry in the stack
+ * @property {array}    stack    - The stack used to store values to pass into callback
+ * @property {boolean}  running  - Keeps track of if the Stack Runner is currently running through inputs.
+ */
+class StackRunner {
+    constructor(callback) {
+        this.callback = callback;
+        this.stack = [];
+        this.running = false;
+    }
+    /**
+     * Push - Appends the new value to the end of the stack.
+     * @param {any} value - Value to pass into callback.
+     */
+    push(value) {
+        this.stack.push(value);
+        if (!this.running) {
+            this.run();
+        }
+    }
+    /**
+     * Run - Shifts off the stack and passes that value into the callback.
+     * If there is more in the stack it will recursively call itself until
+     * the stack is empty.
+     */
+    async run() {
+        await this.callback(this.stack.shift());
+        if (this.stack.length > 1) {
+            this.run();
+        } else {
+            this.running = false;
+        }
+    }
+}
+
 module.exports = {
     runTimesOverTime,
-    moveCloserTo
+    moveCloserTo,
+    StackRunner
 };

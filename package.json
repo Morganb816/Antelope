@@ -1,12 +1,19 @@
 {
   "name": "antelopejs",
-  "version": "1.0.14",
+  "version": "1.0.17",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "mocha --watch --reporter mocha-clearscreen-reporter",
+    "publish": "npm run test",
+    "test": "mocha",
+    "posttest": "npm run document && npm run build",
     "document": "cd src && jsdoc -r . -d ../docs && cd ..",
-    "build": "webpack"
+    "build": "webpack",
+    "postbuild": "node tools/incrementBuild.js",
+    "deploy-package": "npm publish",
+    "dev": "mocha --watch --reporter mocha-clearscreen-reporter",
+    "deploy-example": "git push heroku `git subtree split --prefix example master`:master --force",
+    "run-example": "cd example && npm run dev"
   },
   "homepage": "https://github.com/Morganb816/Antelope",
   "repository": {
