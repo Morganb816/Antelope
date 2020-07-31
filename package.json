@@ -11,7 +11,7 @@
     "postpublish-build": "node tools/incrementBuild.js && npm run deploy-package",
     "deploy-package": "npm publish",
     "build": "webpack",
-    "document": "cd src && jsdoc -r . -d ../docs && cd ..",
+    "document": "cd src && jsdoc --readme ../README.md -r . -d ../docs && cd ..",
     "dev": "mocha --watch --reporter mocha-clearscreen-reporter",
     "deploy-example": "git push heroku `git subtree split --prefix example master`:master --force",
     "run-example": "cd example && npm run dev"
