@@ -1,4 +1,4 @@
-const { StackRunner, runTimesOverTime } = require('./util');
+const { StackRunner, runTimesOverTime, moveCloserTo } = require('./util');
 
 /**
  * Change Request
@@ -66,7 +66,7 @@ class InterpolatedValue {
         const changeInTime = request.time - this.lastTime;
         return new Promise(resolve => {
             runTimesOverTime(changeInValue, changeInTime, () => {
-                this.value ++;
+                this.value = moveCloserTo(this.value, requestValue, 1);
             }, resolve);
         });
     };
