@@ -69,8 +69,11 @@ class InterpolatedValue {
         const changeInTime = request.time - this.lastTime;
         return new Promise(resolve => {
             runTimesOverTime(changeInValue, changeInTime, () => {
-                this.value = moveCloserTo(this.value, requestValue, 1);
-            }, resolve);
+                this.value = moveCloserTo(this.value, request.value, 1);
+            }, () => {
+                this.lastTime = Date.now();
+                resolve();
+            });
         });
     };
 };
