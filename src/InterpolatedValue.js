@@ -63,6 +63,9 @@ class InterpolatedValue {
      */
     run(request) {
         const changeInValue = Math.abs(this.value - request.value);
+        if (changeInValue === 0) {
+            return;
+        }
         const changeInTime = request.time - this.lastTime;
         return new Promise(resolve => {
             runTimesOverTime(changeInValue, changeInTime, () => {
