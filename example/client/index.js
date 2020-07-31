@@ -50,7 +50,8 @@ function updateDisplay() {
 */
 exampleValue.subscribeToUpdates(updateDisplay);
 
-
+document.getElementById('add-button').addEventListener('click', handleAdd);
+document.getElementById('subtract-button').addEventListener('click', handleSubtract);
 
 addEventListener('keypress', e => {
     switch (e.key) {
