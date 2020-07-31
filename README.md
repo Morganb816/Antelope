@@ -6,6 +6,8 @@
 
 ## [Example](https://antelope-networking-example.herokuapp.com/)
 
+## [Documentation](https://morganb816.github.io/Antelope/)
+
 ## About
 ### What it is:
 Antelope Networking is a library used to help develop JavaScript multiplayer games with a determanistic client server architecture.
