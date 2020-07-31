@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Global</title>
+    <title>JSDoc: Class: StackRunner</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Global</h1>
+    <h1 class="page-title">Class: StackRunner</h1>
 
     
 
@@ -28,7 +28,12 @@
 
 <header>
     
-        <h2></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>StackRunner<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">Stack Runner
+- Class that is used to create a stack that aslong 
+as it has something in it will recursivley run a callback, by
+shifting off its stack, until the stack is empty.</div>
         
     
 </header>
@@ -38,7 +43,126 @@
     
         
 
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="StackRunner"><span class="type-signature"></span>new StackRunner<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
         
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The callback to run on each entry in the stack</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stack</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The stack used to store values to pass into callback</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>running</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Keeps track of if the Stack Runner is currently running through inputs.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
 
 
 <dl class="details">
@@ -68,6 +192,11 @@
     
 
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="util_index.js.html">util/index.js</a>, <a href="util_index.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
 
     
 
@@ -77,7 +206,24 @@
 </dl>
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     </div>
 
@@ -104,7 +250,7 @@
     
 
     
-    <h4 class="name" id="moveCloserTo"><span class="type-signature"></span>moveCloserTo<span class="signature">(from, to, amount)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id="push"><span class="type-signature"></span>push<span class="signature">(value)</span><span class="type-signature"></span></h4>
     
 
     
@@ -112,8 +258,8 @@
 
 
 <div class="description">
-    Move Closer To
- - A function that moves a number closer to another number by a given amount.
+    Push
+- Appends the new value to the end of the stack.
 </div>
 
 
@@ -149,13 +295,13 @@
 
         <tr>
             
-                <td class="name"><code>from</code></td>
+                <td class="name"><code>value</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">any</span>
 
 
             
@@ -165,53 +311,7 @@
 
             
 
-            <td class="description last">Number to move from</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>to</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Number to move closer to</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>amount</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Amount to move</td>
+            <td class="description last">Value to pass into callback.</td>
         </tr>
 
     
@@ -252,7 +352,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_index.js.html">util/index.js</a>, <a href="util_index.js.html#line34">line 34</a>
+        <a href="util_index.js.html">util/index.js</a>, <a href="util_index.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -277,28 +377,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - value closer to the end goal
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
@@ -310,7 +388,7 @@
     
 
     
-    <h4 class="name" id="runTimesOverTime"><span class="type-signature"></span>runTimesOverTime<span class="signature">(times, time, func, callback)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    <h4 class="name" id="run"><span class="type-signature">(async) </span>run<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -318,8 +396,10 @@
 
 
 <div class="description">
-    Run Times Over Time
- - A function that runs a given function a supplied amount of times over a certain time period.
+    Run
+- Shifts off the stack and passes that value into the callback.
+If there is more in the stack it will recursively call itself until
+the stack is empty.
 </div>
 
 
@@ -328,124 +408,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>times</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Times to run the provided function</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>time</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Overall run time</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>func</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">func to run</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">func to execute when complete</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -481,7 +443,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="util_index.js.html">util/index.js</a>, <a href="util_index.js.html#line10">line 10</a>
+        <a href="util_index.js.html">util/index.js</a>, <a href="util_index.js.html#line83">line 83</a>
     </li></ul></dd>
     
 
@@ -506,28 +468,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    - a funciton that will cancel the execution of this function.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">function</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 

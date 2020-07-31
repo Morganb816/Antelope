@@ -49,7 +49,8 @@ function moveCloserTo(from, to, amount) {
 }
 
 /**
- * Stack Runner - Class that is used to create a stack that aslong 
+ * Stack Runner
+ * - Class that is used to create a stack that aslong 
  * as it has something in it will recursivley run a callback, by
  * shifting off its stack, until the stack is empty.
  * @property {function} callback - The callback to run on each entry in the stack
@@ -63,7 +64,8 @@ class StackRunner {
         this.running = false;
     }
     /**
-     * Push - Appends the new value to the end of the stack.
+     * Push
+     * - Appends the new value to the end of the stack.
      * @param {any} value - Value to pass into callback.
      */
     push(value) {
@@ -73,7 +75,8 @@ class StackRunner {
         }
     }
     /**
-     * Run - Shifts off the stack and passes that value into the callback.
+     * Run
+     * - Shifts off the stack and passes that value into the callback.
      * If there is more in the stack it will recursively call itself until
      * the stack is empty.
      */

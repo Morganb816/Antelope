@@ -1,5 +1,8 @@
+// This program will automatically increment the minor version of this npm library.
+
 const fs = require('fs');
 const path = require('path');
+
 fs.readFile(path.resolve('package.json'), 'utf8', (err, data) => {
     if (err) throw new Error(err);
     

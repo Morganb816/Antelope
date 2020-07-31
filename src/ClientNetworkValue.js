@@ -42,7 +42,8 @@ class ClientNetworkValue {
     }
 
     /**
-     * Resets the variables value and steps. Mostly used when the server found a incorrect value sent.
+     * Reset
+     * - Resets the variables value and steps. Mostly used when the server found a incorrect value sent.
      * @param {*} value - Value to reset this variable to. defaults to 0.
      */
     reset(value = 0) {
@@ -60,7 +61,8 @@ class ClientNetworkValue {
     }
     
     /**
-     * Set - sets a new value to this variable and emits a message telling the server to update as well.
+     * Set
+     * - sets a new value to this variable and emits a message telling the server to update as well.
      * @param {number} value - new value for this variable.
      */
     set(value, other) {
@@ -71,7 +73,8 @@ class ClientNetworkValue {
     }
     
     /**
-     * Handle Message - Runs when the client receives a validation response from the server about a given step.
+     * Handle Message
+     * - Runs when the client receives a validation response from the server about a given step.
      * If the response is valid then nothing happens. if the response is not valid we restore this variable to
      * he value responded by the server and forget any updates after that point.
      * @param {object} step - object containing a step number and value relayed from the server
@@ -89,7 +92,8 @@ class ClientNetworkValue {
     };
 
     /**
-     * Subscribe To Updates - Used to set callbacks to run when the server updates this variable.
+     * Subscribe To Updates
+     * - Used to set callbacks to run when the server updates this variable.
      * @param {function} callback - callback that will run whenever the server updates this variable. 
      */
     subscribeToUpdates(callback) {
